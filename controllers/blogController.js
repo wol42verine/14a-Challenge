@@ -36,17 +36,14 @@ exports.createBlog = async (req, res) => {
 // Function to handle the request to get a single blog by ID
 exports.getBlogById = async (req, res) => {
   try {
-    const blogPost = await Blog.findByPk(req.params.id); // Use findByPk for Sequelize
-    if (!blogPost) {
-      return res.status(404).send('Blog post not found');
+    const blog = await Blog.findByPk(req.params.id); // Find blog by primary key
+    if (blog) {
+      res.render('singleBlog', { blog: blog.get({ plain: true }) }); // Render single blog view
+    } else {
+      res.status(404).send('Blog not found');
     }
-    res.render('singleBlog', {
-      title: blogPost.title,
-      content: blogPost.content,
-      author: blogPost.author,
-      publishedDate: blogPost.createdAt,
-    });
   } catch (error) {
-    res.status(500).send('Server error');
+    console.error(error);
+    res.status(500).send('Something went wrong!');
   }
 };
