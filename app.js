@@ -41,7 +41,7 @@ app.use(session({
 
 // Routes
 app.use('/', require('./routes/homeRoutes'));
-app.use('/blogs/', blogRoutes); // Ensure this line is correct
+app.use('/blogs', blogRoutes); // Ensure this line is correct
 app.use('/', userRoutes);
 
 // Start server

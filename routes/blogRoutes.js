@@ -8,7 +8,7 @@ router.get('/create', blogController.renderCreateForm);
 // Handle form submission
 router.post('/create', blogController.createBlog);
 
-router.get('/:id', blogController.getBlogById);
+router.get('/blogs/:id', blogController.getBlogById);
 
 // Get all blog posts (or the blog home page)
 // router.get('/', blogController.getAllBlogs);
