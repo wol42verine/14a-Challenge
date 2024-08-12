@@ -1,0 +1,15 @@
+{{!-- views/allBlogs.handlebars --}}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Blogs</title>
+</head>
+<body>
+  <h1>All Blogs</h1>
+  <ul>
+    {{#each blogs}}
+      <li><a href="/blogs/{{this.id}}">{{this.title}}</a></li>
+    {{/each}}
+  </ul>
+</body>
+</html>
