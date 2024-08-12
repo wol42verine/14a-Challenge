@@ -1,0 +1,15 @@
+<!-- views/register.handlebars -->
+<header>
+  <nav>
+    <a href="/">Home</a>
+  </nav>
+</header>
+
+<h1>Register Page</h1>
+<form action="/register" method="POST">
+  <input type="text" name="username" placeholder="Username" required>
+  <input type="password" name="password" placeholder="Password" required>
+  <button type="submit">Register</button>
+</form>
+
+<p>Already have an account? <a href="/login">Login</a></p>
